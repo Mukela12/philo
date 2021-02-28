@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% block title %}
+	<title>Philosophical Pineapple</title>
+	{% endblock title %}
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="icon" type="image/png" href="{{url_for('static', filename ='images/icons/overlay.ico')}}"/>
+
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'vendor/bootstrap/css/bootstrap.min.css')}}">
+
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'vendor/animate/animate.css')}}">
+
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'vendor/css-hamburgers/hamburgers.min.css')}}">
+
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'vendor/select2/select2.min.css')}}">
+
+	<link rel="stylesheet" type="text/css" href="{{ url_for ('static', filename = 'css/util.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/main.css')}}">
+
+</head>
+<body>
+
+	<div class="contact1">
+		<div class="container-contact1">
+			<div class="contact1-pic js-tilt" data-tilt>
+				<img src="{{url_for('static', filename = 'images/PP.png')}}" alt="IMG">
+			</div>
+  {%block content %}
+			<form class="contact1-form validate-form" method = "POST" action ="#">
+				<span class="contact1-form-title">
+					Welcome to the Philosophical Pineapple Feedback page
+				</span>
+
+				<div class="wrap-input1 validate-input" data-validate = "Name is required">
+					<input class="input1" type="text" name="name" placeholder="Name">
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="wrap-input1 validate-input" >
+					<input class="input1" type="text" name="info" placeholder="Are you new to Philosophical Pineapple?">
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="wrap-input1 validate-input" data-validate = "Subject is required">
+					<input class="input1" type="text" name="subject" placeholder="Subject">
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="wrap-input1 validate-input" data-validate = "Message is required">
+					<textarea class="input1" name="message" placeholder="Message"></textarea>
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="container-contact1-form-btn">
+					<button class="contact1-form-btn" method = "POST" action = "http://127.0.0.1:5000//Thankyou">
+						<span>
+							Send
+							<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+						</span>
+					</button>
+				</div>
+			</form>
+			{% endblock %}
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+</body>
+</html>
